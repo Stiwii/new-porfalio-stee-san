@@ -1,38 +1,38 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import MenuButton from './MenuButton'
+import MenuButton from './navbar/MenuButton'
 
 
 const Navbar = ({home}) => {
 
-  const [homeRef, setHomeRef] = useState(false)
-  const [aboutRef, setAboutRef] = useState(false)
-  const [skillRef, setSkillRef] = useState(false)
-  const [expirienceRef, setExpirienceRef] = useState(false)
-  const [projectsRef, setProjectsRef] = useState(false)
-  const [contactRef, setContactRef] = useState(false)
+
 const [clicked, setClicked] = useState(false)
+const [clicke, setClicke] = useState(false)
   const handleClick = () => {
     //pasar de false a true y viceversa
     setClicked(!clicked)
+    // setClicke(!clicke)
   }
+
+  
 
   return (
     <>
       <NavContainer>
         
         <div className={`nav__links ${clicked ? 'active' : ''}`} >
-          <a className={`${clicked ? 'active' : ''}`} onClick={handleClick} href="#home">Home</a>
-          <a className={`${clicked ? 'active' : ''}`} onClick={handleClick} href="#h">About</a>
-          <a className={`${clicked ? 'active' : ''}`} onClick={handleClick} href="#h">Skills</a>
-          <a className={`${clicked ? 'active' : ''}`} onClick={handleClick} href="#h">Experience</a>
-          <a className={`${clicked ? 'active' : ''}`} onClick={handleClick} href="#h">Projects</a>
-          <a className={`${clicked ? 'active' : ''}`} onClick={handleClick} href="#h">Contact</a>
+          <NavLink onClick={handleClick} className={`nav__word ${clicke ? 'active' : ''}`} to='/' end>Home</NavLink>
+          <NavLink onClick={handleClick} className={`nav__word ${clicke ? 'active' : ''}`} to='/about' >About</NavLink>
+          <NavLink onClick={handleClick} className={`nav__word ${clicke ? 'active' : ''}`} to='/skills' >Skills</NavLink>
+          <NavLink onClick={handleClick} className={`nav__word ${clicke ? 'active' : ''}`} to='/experience' >Experience</NavLink>
+          <NavLink onClick={handleClick} className={`nav__word ${clicke ? 'active' : ''}`} to='/projects' >Projects</NavLink>
+          <NavLink onClick={handleClick} className={`nav__word ${clicke ? 'active' : ''}`} to='/contact' >Contact</NavLink>
         </div>
         <div className='btn__menu'>
           <MenuButton clicked={clicked} handleClick={handleClick} />
         </div>
-        <BgDiv className={`initial ${clicked ? ' active' : ''} `}></BgDiv>
+        
       </NavContainer>
     </>
   )
@@ -51,7 +51,7 @@ const NavContainer = styled.nav`
     0%{background-position: 0 50%;}
     50%{background-position: 100 50%;}
     100%{background-position: 0 50%;}
-}
+  }
   .nav__links{
     display: flex;
     flex-direction: column;
@@ -64,7 +64,9 @@ const NavContainer = styled.nav`
     height: 100%;
     max-height: 22rem;
     margin:auto;
-    /* background-color: red; */
+  }
+  .nav__word{
+    
   }
   a{
     color: var(--lightest-slate)
@@ -75,47 +77,55 @@ const NavContainer = styled.nav`
  }
  a.active{
   font-size:2rem;
+  color: var(--green);
+ }
+
+ @media(max-width: 1080px){
+  width: 200px; 
  }
 @media(max-width: 768px){
   border: 0;
   width:0;
   .nav__links{
-    font-size:2rem;
+    font-size:1.5rem;
     position:absolute;
-    background: linear-gradient(-45deg, var(--navy) , black, var(--green)  );
+    background: linear-gradient(-45deg, black ,  var(--navy) , var(--green)  );
     border-radius: 0 0 0 80%;
     border-left: 2px solid var(--green);
     border-bottom:2px solid var(--green);
-    top: -700px;
-    left: 1000px;
+    top: -2000px;
+    left: -2000px;
     right:0;
     bottom:0;
     transition: 1s;
+    
   }
   .btn__menu{
     position:absolute;
-    top:100px;
+    top:50px;
     right:50px;
   }
   .nav__links.active{
     position: absolute;
     transition: 0.8s;
-    max-height: 100%;
-    top:0; 
-    right:0; 
+    max-height: 100vh;
+    max-width:100vw;
+    top:-40px; 
+    right: 0px; 
     bottom:0; 
-    left:0;
+    left:0px;
     padding-top: 0;
-    animation: moverDiagonal 5s ease-linear infinite;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index:100;
+    /* animation: moverDiagonal 5s ease-linear infinite; */
   }
 }
-@media (min-width: 768px){
+@media (min-width: 769px){
   .btn__menu{
   display:none;
  }
 
 }
  
-`
-const BgDiv = styled.div`
 `

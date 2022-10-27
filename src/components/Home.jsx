@@ -7,10 +7,12 @@ const Home = () => {
     <>
       <HomeSection id='home'>
         
+         
+        <div className="home__container">
           <div>
-          <h1 className='greeting'><span className='greeting__span'>Welcome, my name is </span> </h1>
+             <h1 className='greeting'><span className='greeting__span'><span>Welcome</span> , my name is </span> </h1>
         </div>
-         <div className="home__container">
+         
           <div>
           <h2 className='name'><span className='name_span'>Steeven Sanchez.</span> </h2>
         </div>
@@ -32,8 +34,9 @@ const Home = () => {
 export default Home
 
 const HomeSection = styled.section`
-  background-color: var(--navy);
-  /* background-color: black; */
+  /* background-color: var(--navy); */
+  
+  border-radius: 10px;
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
@@ -41,22 +44,42 @@ const HomeSection = styled.section`
   flex-direction: column;
   align-items: flex-start;
   min-height: 100%;
-  padding: 0px 150px;
+  padding: 0px 100px;
   max-width: inherit;
   margin:auto;
+
+  height:100%;
+     max-height: 450px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
   .home__container{
-    
-    /* border-left: 1px solid var(--lightest-slate); */
-    /* padding-left : 10px; */
+    padding:10px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left:100px;
+    right: 280px;
+    transition: all 500ms;
+  }
+  .home__container:hover{
+    transform:translateY(-5px) scale(1.01);
+  
   }
   div{
       display: block;
-      transition: 
+      
      }
  
   div h1{
-      transition-delay: 100ms;
+      animation-delay: 100ms;
       transition: text-shadow 100ms ease;
+      animation-name: wiggle;
+      animation-duration: 2500ms;
      } 
    h1:hover, h2:hover{
     text-shadow: 0 0 3px var(--green);
@@ -69,33 +92,42 @@ const HomeSection = styled.section`
         font-weight: 400;
         color: var(--green)
      }
+  h1 span {
+    font-size: clamp(30px, 5vw, 40px);
+    -webkit-text-stroke: 1px var(--green);
+  color: transparent; 
+  }
   div h2{
-      transition-delay: 200ms;
-    
+    animation-delay: 200ms;
       border-radius: 10px;
+      animation-name: wiggle;
+      animation-duration: 2s;
      }
   
   h2{
       font-size: clamp(40px, 8vw, 80px);
       font-weight: 600;
-     color: var(--lightest-slate);
+     color: var(--slate);
      line-height: 1.1;
      }
   div h3{
-      transition-delay: 300ms;
-      
+    animation-delay: 300ms;
+      animation-name: wiggle;
+      animation-duration: 2s; 
      }
   h3{
     margin:0;
     margin-top: 10px;
     line-height: 0.9;
     color: var(--slate);
-    font-size: clamp(40px, 8vw, 65px);
+    font-size: clamp(35px, 8vw, 65px);
     
   }
   div p{
-    transition-delay: 1s;
+    animation-delay: 400ms;
     text-align: justify;
+    animation-name: wiggle;
+    animation-duration: 2s;
   }
 
   p{
@@ -116,6 +148,7 @@ const HomeSection = styled.section`
   }
 
   a{
+    text-decoration: underline; 
     color: var(--green);
     font-family: var(--font-mono);
     transition: var(--transition);
@@ -124,9 +157,34 @@ const HomeSection = styled.section`
     font-size: clamp(40px, 0vw, 60px);
   }
   @media (max-width: 1080px){
- padding: 0px 100px
+ padding: 0px 100px;
+ .home__container{
+    padding:10px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left:40px;
+    right: 200px;
+    
+    transition: all 500ms;
+  }
   }
   @media (max-width: 768px){
     padding: 0px 50px;
+    .home__container{
+    padding:10px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left:40px;
+    right: 50px;
+    transition: all 500ms;
+  }
   }   
 `
