@@ -44,7 +44,7 @@ const Projects = () => {
             modifier: 1,
             slideShadows: true,
           }}
-          navigation
+          
           pagination={{ clickable: true }}
           onSwiper={(swiper) => console.log(swiper)}
 
