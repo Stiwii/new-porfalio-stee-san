@@ -18,6 +18,7 @@ const MenuButton = ({handleClick,clicked}) => {
 export default MenuButton
 
 const Menu = styled.div`
+
 .nav-icon-5{
   width: 35px;
   height: 30px;

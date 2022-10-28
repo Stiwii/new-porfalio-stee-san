@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { BsChevronDown } from 'react-icons/bs';
 
 
 const Home = () => {
@@ -24,9 +26,17 @@ const Home = () => {
           <p><span className='uppercase'>I</span> am a student in the last semester of Computer Science and Full Stack Web Developer, especially in Front End. Currently, I work on creating projects where I focus my knowledge on <span className='react'><a href="https://reactjs.org" target='_blank'>Reactjs</a>. </span> </p>
         </div>
         </div>
-        
+
+
+
+        <button className='abajo__btn'>
+        <Link to='/about'><BsChevronDown /></Link>
+      </button>
+     
+      
 
       </HomeSection>
+     
     </>
   )
 }
@@ -49,15 +59,34 @@ const HomeSection = styled.section`
   margin:auto;
 
   height:100%;
-     max-height: 450px;
+     max-height: 600px;
      display: flex;
      justify-content: center;
      align-items: center;
 
+  .abajo__btn{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    position: absolute;
+    bottom: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    width:100%;
+    height:100%;
+    max-width:50px;
+    max-height:50px;
+    font-size:30px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    color: var(--green);
+  }
   .home__container{
     padding:10px;
     box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-    border-radius: 15px;
+    /* border-radius: 15px; */
     background: rgba(255, 255, 255, 0.1);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -68,18 +97,15 @@ const HomeSection = styled.section`
   }
   .home__container:hover{
     transform:translateY(-5px) scale(1.01);
-  
+    transition: all 500ms;
   }
   div{
       display: block;
       
      }
  
-  div h1{
-      animation-delay: 100ms;
-      transition: text-shadow 100ms ease;
-      animation-name: wiggle;
-      animation-duration: 2500ms;
+  .greeting span{
+      animation: open 1000ms ease;
      } 
    h1:hover, h2:hover{
     text-shadow: 0 0 3px var(--green);
@@ -95,13 +121,10 @@ const HomeSection = styled.section`
   h1 span {
     font-size: clamp(30px, 5vw, 40px);
     -webkit-text-stroke: 1px var(--green);
-  color: transparent; 
+  color: white; 
   }
-  div h2{
-    animation-delay: 200ms;
-      border-radius: 10px;
-      animation-name: wiggle;
-      animation-duration: 2s;
+  div h2 span{
+    animation: open 1000ms ease;
      }
   
   h2{
@@ -110,10 +133,8 @@ const HomeSection = styled.section`
      color: var(--slate);
      line-height: 1.1;
      }
-  div h3{
-    animation-delay: 300ms;
-      animation-name: wiggle;
-      animation-duration: 2s; 
+  div h3 span{
+    animation: open 1000ms ease;
      }
   h3{
     margin:0;
@@ -124,10 +145,7 @@ const HomeSection = styled.section`
     
   }
   div p{
-    animation-delay: 400ms;
-    text-align: justify;
-    animation-name: wiggle;
-    animation-duration: 2s;
+    animation: open 1000ms ease;
   }
 
   p{
@@ -142,6 +160,7 @@ const HomeSection = styled.section`
   p span {
     /* color: var(--green); */
     font-family: var(--font-mono);
+    animation: open 1000ms ease;
   }
   p span:hover{
     text-shadow:  0 0 8px white;
@@ -159,13 +178,7 @@ const HomeSection = styled.section`
   @media (max-width: 1080px){
  padding: 0px 100px;
  .home__container{
-    padding:10px;
-    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    position: absolute;
+
     left:40px;
     right: 200px;
     
@@ -175,15 +188,9 @@ const HomeSection = styled.section`
   @media (max-width: 768px){
     padding: 0px 50px;
     .home__container{
-    padding:10px;
-    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    position: absolute;
-    left:40px;
-    right: 50px;
+
+    left:20px;
+    right: 20px;
     transition: all 500ms;
   }
   }   

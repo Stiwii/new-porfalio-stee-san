@@ -51,22 +51,46 @@
       transform: rotateZ(0);
     }
     15% {
-      transform: rotateZ(-15deg);
+      transform: rotateZ(10deg);
     }
     20% {
-      transform: rotateZ(-13deg);
+      transform: rotateZ(7deg);
     }
     25% {
-      transform: rotateZ(-10deg);
+      transform: rotateZ(5deg);
     }
     30% {
-      transform: rotateZ(-6deg);
+      transform: rotateZ(3deg);
     }
     35% {
-      transform: rotateZ(-4deg);
+      transform: rotateZ(1deg);
     }
     40%, 100% {
       transform: rotateZ(0);
+    }
+  }
+
+  @keyframes open {
+    0%, 7% {
+      font-size: 1px;
+    }
+    15% {
+      font-size: 2px;
+    }
+    20% {
+      font-size: 3px;
+    }
+    25% {
+      font-size: 4px;
+    }
+    30% {
+      font-size: 5px;
+    }
+    35% {
+     font-size: 6px;
+    }
+    40%, 100% {
+    
     }
   }
 
