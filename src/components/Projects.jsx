@@ -9,7 +9,7 @@ import { Navigation, Pagination, Scrollbar, A11y, EffectCoverflow } from 'swiper
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
+// Import Swiper styles 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';

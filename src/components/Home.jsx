@@ -53,16 +53,14 @@ const HomeSection = styled.section`
   -webkit-box-align: center;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 100%;
   padding: 0px 100px;
-  max-width: inherit;
   margin:auto;
-
+  
+  max-width: inherit;
   height:100%;
-     max-height: 600px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+  max-height: 600px;
+  min-height: 100%;
+
 
   .abajo__btn{
     display:flex;

@@ -33,7 +33,7 @@ const [clicke, setClicke] = useState(false)
           <NavLink onClick={handleClick} className={`nav__word ${clicke ? 'active' : ''}`} to='/skills' ><GiSkills /> Skills</NavLink>
           <NavLink onClick={handleClick} className={`nav__word ${clicke ? 'active' : ''}`} to='/experience' >Experience <FaBookReader/></NavLink>
           <NavLink onClick={handleClick} className={`nav__word ${clicke ? 'active' : ''}`} to='/projects' ><AiFillProject/> Projects</NavLink>
-          {/* <NavLink onClick={handleClick} className={`nav__word ${clicke ? 'active' : ''}`} to='/contact' >Contact <AiOutlineContacts/></NavLink> */}
+          
         </div>
         <div className='btn__menu'>
           <MenuButton clicked={clicked} handleClick={handleClick} />
@@ -51,7 +51,6 @@ const NavContainer = styled.nav`
   display: flex;
   height:100%;
   background-color: var(--na);
-  /* background-color: rgba(255, 136, 0, 0.3); */
   padding: 5px;
   
 
